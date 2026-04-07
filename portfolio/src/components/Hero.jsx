@@ -1,7 +1,12 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-const roles = ["Software Developer", "AI Enthusiast", "Full Stack Dev", "Data Analyst"];
+const roles = [
+  "Software Developer",
+  "AI Enthusiast",
+  "Full Stack Dev",
+  "Data Analyst",
+];
 
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -9,114 +14,116 @@ export default function Hero() {
   const [deleting, setDeleting] = useState(false);
   const timerRef = useRef(null);
 
-  // Typing effect
   useEffect(() => {
     const current = roles[roleIndex];
+
     if (!deleting) {
       if (text.length < current.length) {
-        timerRef.current = setTimeout(() => setText(current.slice(0, text.length + 1)), 80);
+        timerRef.current = setTimeout(() => {
+          setText(current.slice(0, text.length + 1));
+        }, 70);
       } else {
-        timerRef.current = setTimeout(() => setDeleting(true), 1500);
+        timerRef.current = setTimeout(() => setDeleting(true), 1200);
       }
     } else {
       if (text.length > 0) {
-        timerRef.current = setTimeout(() => setText(text.slice(0, -1)), 40);
+        timerRef.current = setTimeout(() => {
+          setText(text.slice(0, -1));
+        }, 40);
       } else {
         setDeleting(false);
         setRoleIndex((i) => (i + 1) % roles.length);
       }
     }
+
     return () => clearTimeout(timerRef.current);
   }, [text, deleting, roleIndex]);
 
-  // Scroll handler using ID
   const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) element.scrollIntoView({ behavior: "smooth" });
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center px-8 md:px-12 bg-transparent relative overflow-hidden"
+      className="min-h-screen flex items-center px-4 sm:px-6 md:px-12 relative overflow-hidden"
     >
-      {/* Glow backgrounds */}
-      <div className="absolute w-[400px] h-[400px] bg-cyan-400/20 blur-[120px] top-10 left-10 pointer-events-none"></div>
-      <div className="absolute w-[300px] h-[300px] bg-blue-500/20 blur-[120px] bottom-10 right-10 pointer-events-none"></div>
+      {/* Glow */}
+      <div className="absolute w-[250px] h-[250px] bg-cyan-400/20 blur-[100px] top-5 left-5"></div>
+      <div className="absolute w-[200px] h-[200px] bg-blue-500/20 blur-[100px] bottom-5 right-5"></div>
 
-      <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl w-full mx-auto">
-        {/* LEFT TEXT */}
+      <div className="flex flex-col md:grid md:grid-cols-2 gap-10 items-center max-w-6xl w-full mx-auto">
+
+        {/* LEFT */}
         <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
         >
-          <p className="text-cyan-300 italic mb-2">Hi, I am</p>
-          <h1 className="text-5xl md:text-7xl font-bold text-white tracking-wide">MILAN</h1>
+          <p className="text-cyan-300 italic text-sm">Hi, I am</p>
 
-          {/* Typing Effect */}
-          <h2 className="mt-4 text-xl md:text-2xl text-cyan-400 font-medium">
-            I am a <span>{text}<span className="animate-pulse">|</span></span>
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mt-1">
+            MILAN
+          </h1>
+
+          <h2 className="mt-3 text-base sm:text-lg md:text-xl text-cyan-400">
+            I am a{" "}
+            <span>
+              {text}
+              <span className="animate-pulse">|</span>
+            </span>
           </h2>
 
-          <p className="mt-6 text-gray-300 leading-relaxed max-w-lg">
-            I build intelligent systems, scalable APIs, and immersive applications. Passionate about turning complex ideas into real-world solutions.
+          <p className="mt-4 text-gray-300 text-sm sm:text-base max-w-md leading-relaxed">
+            I build intelligent systems, scalable APIs, and real-world applications.
           </p>
 
           {/* Buttons */}
-          <div className="mt-8 flex gap-4">
+          <div className="mt-6 flex flex-col sm:flex-row gap-3">
             <button
               onClick={() => scrollToSection("contact")}
-              className="px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-red-500 text-white font-semibold shadow-lg hover:scale-105 transition"
+              className="w-full sm:w-auto px-5 py-2.5 rounded-full bg-gradient-to-r from-pink-500 to-red-500 text-white font-medium"
             >
               Hire Me
             </button>
 
             <button
               onClick={() => scrollToSection("projects")}
-              className="px-6 py-3 rounded-full border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition"
+              className="w-full sm:w-auto px-5 py-2.5 rounded-full border border-cyan-400 text-cyan-400"
             >
               View Projects
             </button>
           </div>
         </motion.div>
 
-        {/* RIGHT CODE CARD */}
+        {/* RIGHT CARD */}
         <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
-          className="flex justify-center md:justify-end"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="w-full flex justify-center"
         >
-          <motion.div
-            animate={{ y: [0, -15, 0] }}
-            transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
-            className="relative w-full max-w-md"
-          >
-            <div className="bg-black/60 backdrop-blur-lg border border-white/10 rounded-2xl shadow-2xl p-5 relative z-10">
+          <div className="w-full max-w-sm">
+            <div className="bg-black/60 backdrop-blur-lg border border-white/10 rounded-xl shadow-xl p-4">
+
               {/* Header */}
-              <div className="flex gap-2 mb-3 items-center">
-                <span className="w-3 h-3 bg-red-500 rounded-full"></span>
-                <span className="w-3 h-3 bg-yellow-400 rounded-full"></span>
-                <span className="w-3 h-3 bg-green-500 rounded-full"></span>
-                <p className="text-gray-400 text-sm ml-3">milan@portfolio~</p>
+              <div className="flex gap-2 mb-2 items-center">
+                <span className="w-2.5 h-2.5 bg-red-500 rounded-full"></span>
+                <span className="w-2.5 h-2.5 bg-yellow-400 rounded-full"></span>
+                <span className="w-2.5 h-2.5 bg-green-500 rounded-full"></span>
+                <p className="text-gray-400 text-xs ml-2">milan@portfolio</p>
               </div>
 
-              {/* Code block */}
-              <pre className="text-sm text-cyan-300 font-mono">
+              {/* Code */}
+              <pre className="text-xs sm:text-sm text-cyan-300 font-mono whitespace-pre-wrap">
 {`const profile = {
   name: "Milan",
-  role: "AI & Software Developer",
-  skills: ["Python", "React", "Node", "Machine Learning"],
-  passion: "Building real-world solutions"
+  role: "AI Developer",
+  skills: ["Python","React","ML"],
 };`}
               </pre>
             </div>
-
-            {/* Glow */}
-            <div className="absolute inset-0 bg-cyan-400/10 blur-2xl -z-10"></div>
-          </motion.div>
+          </div>
         </motion.div>
+
       </div>
     </section>
   );

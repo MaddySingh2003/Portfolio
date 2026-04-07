@@ -28,7 +28,7 @@ function App() {
 
   return (
     <>
-    <div className="bg-[#0f1729] min-h-screen">
+    <div className="bg-[#0f1729] ">
       <Navbar />
       <Hero />
       <About />

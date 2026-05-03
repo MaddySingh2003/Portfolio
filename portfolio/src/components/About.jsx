@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { User, Shield, Zap } from "lucide-react";
+import { Shield, Zap } from "lucide-react";
+import pho from "../img/pho_.jpg";
 
 export default function About() {
   return (
@@ -13,7 +14,7 @@ export default function About() {
 
       <div className="flex flex-col md:flex-row gap-10 items-center">
         
-        {/* Left Side - Visual */}
+        {/* LEFT - IMAGE HOLOGRAM */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -22,19 +23,28 @@ export default function About() {
           className="w-full md:w-2/5 flex justify-center"
         >
           <div className="relative w-64 h-64 sm:w-80 sm:h-80">
-            <div className="absolute inset-0 border-2 border-dashed border-ai-green/40 rounded-full animate-[spin_20s_linear_infinite] shadow-[0_0_15px_rgba(0,255,65,0.2)]"></div>
-            <div className="absolute inset-4 border border-ai-neon/50 rounded-full animate-[spin_15s_linear_infinite_reverse] shadow-[0_0_15px_rgba(0,240,255,0.2)]"></div>
-            
-            <div className="absolute inset-8 bg-black/60 backdrop-blur-md rounded-full border border-ai-border shadow-[0_0_40px_rgba(0,255,65,0.3)] flex items-center justify-center overflow-hidden group">
-              <User size={80} className="text-ai-green group-hover:scale-110 transition-transform duration-500" />
+
+            {/* Outer Rings */}
+            <div className="absolute inset-0 border-2 border-dashed border-ai-green/40 rounded-full animate-[spin_20s_linear_infinite]"></div>
+            <div className="absolute inset-4 border border-ai-neon/50 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
+
+            {/* IMAGE */}
+            <div className="absolute inset-8 rounded-full overflow-hidden border border-ai-border shadow-[0_0_40px_rgba(0,255,65,0.3)] group">
+              <img
+                src={pho}
+                alt="Milan"
+                className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
             </div>
 
+            {/* Glow Dots */}
             <div className="absolute top-0 left-1/2 w-4 h-4 bg-ai-neon rounded-full animate-pulse"></div>
             <div className="absolute bottom-1/4 right-0 w-4 h-4 bg-ai-purple rounded-full animate-pulse"></div>
+
           </div>
         </motion.div>
 
-        {/* Right Side - Text */}
+        {/* RIGHT SIDE */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -42,8 +52,8 @@ export default function About() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="w-full md:w-3/5"
         >
-          <div className="glass-panel p-8 relative border border-ai-green/20 hover:border-ai-green/50 transition-colors duration-500">
-            
+          <div className="glass-panel p-8 relative border border-ai-green/20 hover:border-ai-green/50 transition">
+
             <div className="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
               <Shield size={120} />
             </div>
@@ -53,34 +63,26 @@ export default function About() {
               Milan Suryavanshi
             </h3>
 
-            <div className="space-y-4 text-gray-400 leading-relaxed font-mono text-sm sm:text-base">
+            <div className="space-y-4 text-gray-400 font-mono text-sm sm:text-base">
               
-              <p className="flex items-start gap-2">
-                <span className="text-ai-green font-bold">&gt;</span>
-                <span>
-                  AI | Data Science | Game Development | Full Stack Developer
-                </span>
+              <p className="flex gap-2">
+                <span className="text-ai-green">&gt;</span>
+                AI | Data Science | Game Development | Full Stack Developer
               </p>
 
-              <p className="flex items-start gap-2">
-                <span className="text-ai-green font-bold">&gt;</span>
-                <span>
-                  I build intelligent, interactive, and visually engaging applications with a strong focus on real-world problem solving and system optimization.
-                </span>
+              <p className="flex gap-2">
+                <span className="text-ai-green">&gt;</span>
+                I build intelligent, interactive, and visually engaging applications focused on real-world problem solving.
               </p>
 
-              <p className="flex items-start gap-2">
-                <span className="text-ai-green font-bold">&gt;</span>
-                <span>
-                  Experienced with FastAPI, Node.js, Flutter, and Machine Learning systems. I enjoy exploring advanced AI systems and scalable architectures.
-                </span>
+              <p className="flex gap-2">
+                <span className="text-ai-green">&gt;</span>
+                Experienced with FastAPI, Node.js, Flutter, and Machine Learning systems.
               </p>
 
-              <p className="flex items-start gap-2">
-                <span className="text-ai-green font-bold">&gt;</span>
-                <span>
-                  Passionate about building AI-driven products like interview systems, local assistants, and real-time applications.
-                </span>
+              <p className="flex gap-2">
+                <span className="text-ai-green">&gt;</span>
+                Passionate about AI products like interview systems, assistants, and real-time apps.
               </p>
             </div>
 

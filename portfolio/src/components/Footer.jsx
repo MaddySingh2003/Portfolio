@@ -15,16 +15,16 @@ export default function Footer() {
               <Terminal className="text-ai-neon w-5 h-5 group-hover:scale-110 transition-transform" />
             </div>
             <span className="text-gray-400 font-mono text-sm">
-              &copy; {year} Milan | <span className="text-ai-purple">AI_Core_System v3.0</span>
+              &copy; {year} Milan 
             </span>
           </div>
 
           {/* Social Links */}
           <div className="flex items-center gap-8">
-            <a href="#" className="text-gray-500 hover:text-ai-neon transition-colors transform hover:scale-125 hover:shadow-[0_0_15px_#00F0FF] rounded-full">
+            <a href="https://github.com/MaddySingh2003" className="text-gray-500 hover:text-ai-neon transition-colors transform hover:scale-125 hover:shadow-[0_0_15px_#00F0FF] rounded-full">
               <FaGithub size={22} />
             </a>
-            <a href="#" className="text-gray-500 hover:text-ai-purple transition-colors transform hover:scale-125 hover:shadow-[0_0_15px_#8A2BE2] rounded-full">
+            <a href="https://www.linkedin.com/in/milan-suryavanshi/" className="text-gray-500 hover:text-ai-purple transition-colors transform hover:scale-125 hover:shadow-[0_0_15px_#8A2BE2] rounded-full">
               <FaLinkedin size={22} />
             </a>
             <a href="#" className="text-gray-500 hover:text-ai-green transition-colors transform hover:scale-125 hover:shadow-[0_0_15px_#00FF41] rounded-full">

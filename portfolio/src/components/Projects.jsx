@@ -6,53 +6,53 @@ const projects = [
   {
     title: "ShopNest AI [Ecom]",
     description:
-      "Full-stack e-commerce platform with ML-based price prediction and recommendation system. Built using Angular frontend and Spring Boot backend with PostgreSQL.",
+      "Full-stack e-commerce platform with ML-based price prediction and recommendation system.",
     image:
-      "https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=1000&auto=format&fit=crop",
     tags: ["Angular", "Spring Boot", "PostgreSQL", "ML"],
-    github: "#",
+    github: "https://github.com/MaddySingh2003/ShopNest-AI",
     live: "https://shop-nest-ai.vercel.app/",
   },
   {
     title: "Skillmatch [ATS Resume Analyzer]",
     description:
-      "Smart job portal with resume scoring and intelligent job matching using NLP techniques. Built with Django, FastAPI and deployed on cloud.",
+      "Smart job portal with resume scoring and intelligent job matching using NLP.",
     image:
-      "https://images.unsplash.com/photo-1581092335878-8f61d7fef3c9?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=1000&auto=format&fit=crop",
     tags: ["Django", "FastAPI", "NLP"],
-    github: "#",
+    github: "https://github.com/MaddySingh2003",
     live: "https://skillmatch-thtz.onrender.com/",
   },
   {
     title: "Market Basket Analysis",
     description:
-      "Interactive ML dashboard using Apriori algorithm to analyze purchasing patterns and generate product insights.",
+      "ML dashboard using Apriori algorithm for product pattern insights.",
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
     tags: ["Python", "Pandas", "Streamlit"],
-    github: "#",
+    github: "https://github.com/MaddySingh2003/Market-Basket-Analysis",
     live:
       "http://mba-docker-env.eba-ztdubmfd.ap-south-1.elasticbeanstalk.com/",
   },
   {
-    title: "Unity Kitchen Game",
-    description:
-      "3D simulation game built in Unity using C#. Includes physics interactions, UI systems, and real-time gameplay mechanics.",
-    image:
-      "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=1000&auto=format&fit=crop",
-    tags: ["Unity", "C#"],
-    github: "https://github.com/MaddySingh2003/Kitchen-Game",
-    live: "#",
-  },
+  title: "Unity Kitchen Game",
+  description:
+    "3D simulation game with physics and real-time interaction.",
+  image:
+    "https://images.unsplash.com/photo-1614294148960-9aa740632a87?q=80&w=1000&auto=format&fit=crop", // ✅ game-like environment
+  tags: ["Unity", "C#"],
+  github: "https://github.com/MaddySingh2003/Kitchen-Game",
+  live: null,
+},
   {
     title: "Fitness Mobile App",
     description:
-      "Cross-platform fitness tracking app built with Flutter and Firebase with real-time data sync and user tracking features.",
+      "Cross-platform fitness tracking app with Firebase integration.",
     image:
-      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1000&auto=format&fit=crop",
     tags: ["Flutter", "Firebase"],
     github: "https://github.com/MaddySingh2003/Flutter-Demo",
-    live: "#",
+    live: null,
   },
 ];
 
@@ -79,8 +79,8 @@ export default function Projects() {
             <div className="absolute -inset-0.5 bg-gradient-to-r from-ai-neon to-ai-purple rounded-xl opacity-0 group-hover:opacity-100 transition blur-md"></div>
 
             <div className="glass-panel relative h-full flex flex-col overflow-hidden bg-[#0A0A0F]">
-
-              {/* Image */}
+              
+              {/* IMAGE */}
               <div className="h-56 overflow-hidden relative border-b border-white/10">
                 <img
                   src={project.image}
@@ -88,7 +88,6 @@ export default function Projects() {
                   className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
                 />
 
-                {/* Terminal Bar */}
                 <div className="absolute top-0 left-0 w-full bg-[#12121A]/80 p-2 flex justify-between border-b border-white/5">
                   <div className="flex gap-1.5">
                     <div className="w-2.5 h-2.5 bg-red-400 rounded-full"></div>
@@ -99,7 +98,7 @@ export default function Projects() {
                 </div>
               </div>
 
-              {/* Content */}
+              {/* CONTENT */}
               <div className="p-6 flex flex-col flex-1">
                 <h3 className="text-2xl font-bold text-white mb-3">
                   {project.title}
@@ -121,21 +120,23 @@ export default function Projects() {
                 </div>
 
                 <div className="flex items-center gap-4 mt-auto pt-4 border-t border-white/10">
-
-                  {project.github !== "#" && (
+                  
+                  {project.github && (
                     <a
                       href={project.github}
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="text-gray-400 hover:text-white flex items-center gap-2 text-sm"
                     >
                       <FaGithub size={16} /> Code
                     </a>
                   )}
 
-                  {project.live !== "#" && (
+                  {project.live && (
                     <a
                       href={project.live}
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="ml-auto text-ai-neon flex items-center gap-2 text-sm"
                     >
                       Live <ExternalLink size={16} />

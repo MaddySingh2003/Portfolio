@@ -9,7 +9,8 @@ const skillCategories = [
       { name: "Machine Learning", level: 80 },
       { name: "Scikit-learn", level: 85 },
       { name: "Pandas / NumPy", level: 85 },
-      { name: "Data Visualization", level: 75 },
+      { name: "Matplotlib", level: 75 },
+      { name: "Streamlit", level: 75 },
     ]
   },
   {
@@ -19,6 +20,7 @@ const skillCategories = [
       { name: "Python / FastAPI", level: 85 },
       { name: "Node.js", level: 80 },
       { name: "Spring Boot", level: 75 },
+      { name: "Django", level: 75 },
       { name: "REST APIs", level: 85 },
     ]
   },
@@ -30,6 +32,17 @@ const skillCategories = [
       { name: "Angular", level: 75 },
       { name: "Tailwind CSS", level: 85 },
       { name: "HTML / CSS", level: 90 },
+      { name: "JavaScript", level: 85 },
+    ]
+  },
+  {
+    title: "Databases",
+    icon: <Database className="text-ai-green w-7 h-7" />,
+    skills: [
+      { name: "PostgreSQL", level: 85 },
+      { name: "MySQL", level: 80 },
+      { name: "MongoDB", level: 80 },
+      { name: "SQLite", level: 70 },
     ]
   },
   {
@@ -38,8 +51,20 @@ const skillCategories = [
     skills: [
       { name: "Git", level: 90 },
       { name: "Linux", level: 80 },
-      { name: "AWS / Vercel / Netlify", level: 70 },
-      { name: "Postman / APIs", level: 85 },
+      { name: "AWS", level: 70 },
+      { name: "Vercel / Netlify", level: 80 },
+      { name: "Render / Supabase", level: 75 },
+      { name: "Postman", level: 85 },
+    ]
+  },
+  {
+    title: "Mobile & Game Dev",
+    icon: <LayoutTemplate className="text-ai-neon w-7 h-7" />,
+    skills: [
+      { name: "Flutter", level: 80 },
+      { name: "Firebase", level: 80 },
+      { name: "Unity (C#)", level: 75 },
+      { name: "Unreal Engine", level: 60 },
     ]
   }
 ];
@@ -65,14 +90,16 @@ export default function Skills() {
             className="neon-border rounded-xl group"
           >
             <div className="glass-panel p-8 h-full relative overflow-hidden bg-[#0A0A0F]/80">
-
+              
               <div className="absolute -top-10 -right-10 w-40 h-40 bg-ai-neon/10 rounded-full blur-[40px] group-hover:bg-ai-neon/20 transition"></div>
 
               <div className="flex items-center gap-4 mb-8 relative z-10 border-b border-white/5 pb-6">
                 <div className="p-3 bg-black border border-ai-border rounded-lg">
                   {category.icon}
                 </div>
-                <h3 className="text-xl font-bold text-white">{category.title}</h3>
+                <h3 className="text-xl font-bold text-white">
+                  {category.title}
+                </h3>
               </div>
 
               <div className="space-y-6 relative z-10">

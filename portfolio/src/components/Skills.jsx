@@ -1,133 +1,104 @@
 import { motion } from "framer-motion";
-import {
-  Code2,
-  Database,
-  Brain,
-  Globe,
-  Server,
-  Cloud,
-  Gamepad2,
-  Smartphone,
-  GitBranch,
-} from "lucide-react";
+import { Network, Database, LayoutTemplate, BrainCircuit } from "lucide-react";
 
-const skills = [
+const skillCategories = [
   {
-    title: "Programming Languages",
-    icon: Code2,
-    items: ["C", "C++", "Java", "Python", "R", "JavaScript"],
-  },
-  {
-    title: "Frontend Development",
-    icon: Globe,
-    items: ["React", "Angular", "Tailwind CSS", "HTML", "CSS"],
+    title: "AI & Data Science",
+    icon: <BrainCircuit className="text-ai-purple w-7 h-7" />,
+    skills: [
+      { name: "Machine Learning", level: 80 },
+      { name: "Scikit-learn", level: 85 },
+      { name: "Pandas / NumPy", level: 85 },
+      { name: "Data Visualization", level: 75 },
+    ]
   },
   {
     title: "Backend Development",
-    icon: Server,
-    items: ["Node.js", "Spring Boot", "Django", "FastAPI", "REST APIs"],
+    icon: <Database className="text-ai-green w-7 h-7" />,
+    skills: [
+      { name: "Python / FastAPI", level: 85 },
+      { name: "Node.js", level: 80 },
+      { name: "Spring Boot", level: 75 },
+      { name: "REST APIs", level: 85 },
+    ]
   },
   {
-    title: "Data Science & ML",
-    icon: Brain,
-    items: [
-      "Machine Learning",
-      "Scikit-learn",
-      "Pandas",
-      "NumPy",
-      "Matplotlib",
-      "Streamlit",
-    ],
+    title: "Frontend Development",
+    icon: <LayoutTemplate className="text-ai-neon w-7 h-7" />,
+    skills: [
+      { name: "React", level: 85 },
+      { name: "Angular", level: 75 },
+      { name: "Tailwind CSS", level: 85 },
+      { name: "HTML / CSS", level: 90 },
+    ]
   },
   {
-    title: "Databases",
-    icon: Database,
-    items: ["PostgreSQL", "MySQL", "MongoDB", "SQLite"],
-  },
-  {
-    title: "Cloud & Tools",
-    icon: Cloud,
-    items: [
-      "AWS",
-      "Vercel",
-      "Netlify",
-      "Render",
-      "Supabase",
-      "Postman",
-    ],
-  },
-  {
-    title: "Dev Tools",
-    icon: GitBranch,
-    items: ["Git", "Linux", "Figma"],
-  },
-  {
-    title: "Game Development",
-    icon: Gamepad2,
-    items: ["Unity (C#)", "Unreal Engine"],
-  },
-  {
-    title: "Mobile Development",
-    icon: Smartphone,
-    items: ["Flutter", "Firebase"],
-  },
+    title: "Tools & Cloud",
+    icon: <Network className="text-yellow-400 w-7 h-7" />,
+    skills: [
+      { name: "Git", level: 90 },
+      { name: "Linux", level: 80 },
+      { name: "AWS / Vercel / Netlify", level: 70 },
+      { name: "Postman / APIs", level: 85 },
+    ]
+  }
 ];
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 px-6 md:px-12 bg-transparent relative">
-
-      {/* Glow */}
-      <div className="absolute w-[300px] h-[300px] bg-cyan-400/10 blur-[120px] top-20 right-10 pointer-events-none"></div>
-
-      <div className="max-w-6xl mx-auto">
-
-        <h2 className="text-4xl font-bold text-center text-cyan-400 mb-16">
-          Skills
+    <section id="skills" className="w-full relative z-10 scroll-mt-24">
+      <div className="flex items-center gap-4 mb-16">
+        <h2 className="text-3xl md:text-5xl font-bold">
+          Technical <span className="text-ai-neon text-glow">Arsenal</span>
         </h2>
+        <div className="h-[1px] flex-1 bg-gradient-to-r from-ai-neon/50 to-transparent"></div>
+      </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {skills.map((s, i) => {
-            const Icon = s.icon;
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {skillCategories.map((category, index) => (
+          <motion.div
+            key={category.title}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            className="neon-border rounded-xl group"
+          >
+            <div className="glass-panel p-8 h-full relative overflow-hidden bg-[#0A0A0F]/80">
 
-            return (
-              <motion.div
-                key={s.title}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group relative"
-              >
-                <div className="
-                  bg-black/40 backdrop-blur-xl border border-white/10
-                  p-6 rounded-2xl
-                  hover:border-cyan-400 hover:shadow-xl transition
-                ">
-                  {/* Glow */}
-                  <div className="absolute inset-0 rounded-2xl bg-cyan-400/0 group-hover:bg-cyan-400/10 blur-xl transition"></div>
+              <div className="absolute -top-10 -right-10 w-40 h-40 bg-ai-neon/10 rounded-full blur-[40px] group-hover:bg-ai-neon/20 transition"></div>
 
-                  {/* Icon */}
-                  <div className="flex items-center gap-3 mb-4">
-                    <Icon className="w-6 h-6 text-cyan-400" />
-                    <h3 className="text-lg font-semibold text-white">
-                      {s.title}
-                    </h3>
-                  </div>
-
-                  {/* Items */}
-                  <div className="text-sm text-gray-400 leading-relaxed">
-                    {s.items.map((item, idx) => (
-                      <span key={idx}>
-                        {item}
-                        {idx !== s.items.length - 1 && " • "}
-                      </span>
-                    ))}
-                  </div>
+              <div className="flex items-center gap-4 mb-8 relative z-10 border-b border-white/5 pb-6">
+                <div className="p-3 bg-black border border-ai-border rounded-lg">
+                  {category.icon}
                 </div>
-              </motion.div>
-            );
-          })}
-        </div>
+                <h3 className="text-xl font-bold text-white">{category.title}</h3>
+              </div>
+
+              <div className="space-y-6 relative z-10">
+                {category.skills.map((skill) => (
+                  <div key={skill.name}>
+                    <div className="flex justify-between mb-2 font-mono text-sm">
+                      <span className="text-gray-300">{skill.name}</span>
+                      <span className="text-ai-neon">{skill.level}%</span>
+                    </div>
+
+                    <div className="w-full h-2.5 bg-[#030305] rounded-full border border-ai-border overflow-hidden">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${skill.level}%` }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1 }}
+                        className="h-full bg-gradient-to-r from-ai-purple to-ai-neon rounded-full"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );

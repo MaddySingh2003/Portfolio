@@ -1,161 +1,113 @@
 import { motion } from "framer-motion";
-import {
-  Briefcase,
-  Brain,
-  Gamepad2,
-  Code2,
-  Database,
-  Globe,
-  Server,
-  Cloud,
-  GitBranch,
-  Cpu,
-} from "lucide-react";
+import { GitCommit, GitBranch, GitMerge } from "lucide-react";
 
-const techStack = [
-  // Frontend
-  { icon: Globe, label: "React" },
-  { icon: Globe, label: "Angular" },
-  { icon: Globe, label: "Tailwind CSS" },
-
-  // Backend
-  { icon: Server, label: "Node.js" },
-  { icon: Server, label: "Spring Boot" },
-  { icon: Server, label: "Django" },
-  { icon: Server, label: "FastAPI" },
-
-  // Languages
-  { icon: Code2, label: "Java" },
-  { icon: Code2, label: "Python" },
-  { icon: Code2, label: "C++" },
-  { icon: Code2, label: "JavaScript" },
-
-  // Databases
-  { icon: Database, label: "MongoDB" },
-  { icon: Database, label: "PostgreSQL" },
-  { icon: Database, label: "MySQL" },
-
-  // AI / ML
-  { icon: Brain, label: "Machine Learning" },
-  { icon: Brain, label: "Scikit-learn" },
-  { icon: Brain, label: "Pandas" },
-  { icon: Brain, label: "NumPy" },
-
-  // Tools
-  { icon: GitBranch, label: "Git" },
-  { icon: Cpu, label: "Linux" },
-  { icon: Cloud, label: "AWS" },
-  { icon: Cloud, label: "Vercel" },
-  { icon: Cloud, label: "Netlify" },
-];
-// 🔥 Timeline (REAL from your resume)
-const timeline = [
+const experiences = [
   {
-    icon: Briefcase,
-    title: "Software & AI Development",
+    role: "Software & AI Development",
+    company: "Personal & Academic Projects",
     period: "2021 – 2025",
-    points: [
-      "Built full-stack applications integrating ML models",
-      "Designed scalable REST APIs (Spring Boot, FastAPI)",
-      "Optimized SQL queries & database performance",
-      "Developed real-world AI systems & dashboards",
-    ],
+    description:
+      "Built full-stack applications integrating machine learning models. Designed scalable REST APIs using Spring Boot and FastAPI, and optimized SQL queries for performance. Developed real-world AI systems including dashboards and automation tools.",
+    icon: <GitMerge className="text-ai-neon w-6 h-6" />,
+    color: "text-ai-neon",
+    borderColor: "border-ai-neon",
+    bgColor: "bg-ai-neon/10",
+    shadow: "shadow-[0_0_20px_rgba(0,240,255,0.4)]"
   },
   {
-    icon: Brain,
-    title: "AI & Data Science",
+    role: "AI & Data Science",
+    company: "Machine Learning Projects",
     period: "Python • ML",
-    points: [
-      "Market Basket Analysis (Apriori algorithm)",
-      "ATS Resume Scoring system",
-      "Recommendation systems & predictive models",
-    ],
+    description:
+      "Developed Market Basket Analysis using Apriori algorithm and built an ATS Resume Scoring system. Created recommendation systems and predictive models using Scikit-learn, Pandas, and NumPy.",
+    icon: <GitBranch className="text-ai-purple w-6 h-6" />,
+    color: "text-ai-purple",
+    borderColor: "border-ai-purple",
+    bgColor: "bg-ai-purple/10",
+    shadow: "shadow-[0_0_20px_rgba(138,43,226,0.4)]"
   },
   {
-    icon: Gamepad2,
-    title: "Game & App Development",
+    role: "Game & App Development",
+    company: "Unity & Flutter Projects",
     period: "Unity • Flutter",
-    points: [
-      "Built 3D Unity simulation game (C#)",
-      "Developed Flutter apps with Firebase",
-      "Handled physics, UI logic & real-time interaction",
-    ],
-  },
+    description:
+      "Built a 3D Unity simulation game using C# and developed cross-platform Flutter apps with Firebase integration. Implemented physics systems, UI logic, and real-time interactions.",
+    icon: <GitCommit className="text-ai-green w-6 h-6" />,
+    color: "text-ai-green",
+    borderColor: "border-ai-green",
+    bgColor: "bg-ai-green/10",
+    shadow: "shadow-[0_0_20px_rgba(0,255,65,0.4)]"
+  }
 ];
 
 export default function Experience() {
   return (
-    <section
-      id="experience"
-      className="py-24 px-6 md:px-12 bg-transparent relative"
-    >
-      {/* Glow */}
-      <div className="absolute w-[300px] h-[300px] bg-cyan-400/10 blur-[120px] top-20 left-10 pointer-events-none"></div>
-
-      <div className="max-w-6xl mx-auto">
-
-        {/* Heading */}
-        <h2 className="text-4xl font-bold text-center text-cyan-400 mb-16">
-          Experience
+    <section id="experience" className="w-full relative z-10 scroll-mt-24">
+      <div className="flex items-center gap-4 mb-16">
+        <h2 className="text-3xl md:text-5xl font-bold">
+          Execution <span className="text-gray-400">Log</span>
         </h2>
+        <div className="h-[1px] flex-1 bg-gradient-to-r from-gray-500/50 to-transparent"></div>
+      </div>
 
-        <div className="grid lg:grid-cols-3 gap-10">
+      <div className="relative max-w-5xl mx-auto">
 
-          {/* 🔹 LEFT SIDE → TECH STACK */}
-          <div className="flex flex-wrap gap-4 content-start">
-            {techStack.map(({ icon: Icon, label }) => (
-              <div
-                key={label}
-                className="flex items-center gap-2 px-4 py-2 
-                bg-black/40 backdrop-blur-xl border border-white/10 
-                rounded-xl text-sm text-gray-300
-                hover:border-cyan-400 hover:text-cyan-400 transition"
-              >
-                <Icon className="w-4 h-4" />
-                {label}
-              </div>
-            ))}
-          </div>
+        {/* Timeline Line */}
+        <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-ai-neon via-ai-purple to-transparent transform md:-translate-x-1/2"></div>
 
-          {/* 🔹 RIGHT SIDE → TIMELINE */}
-          <div className="lg:col-span-2 space-y-6">
-            {timeline.map(({ icon: Icon, title, period, points }, i) => (
-              <motion.div
-                key={title}
-                initial={{ opacity: 0, x: 40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="
-                  bg-black/40 backdrop-blur-xl border border-white/10
-                  p-6 rounded-2xl
-                  hover:border-cyan-400 hover:shadow-xl transition
-                "
-              >
-                {/* Header */}
-                <div className="flex items-center gap-3 mb-3">
-                  <Icon className="w-5 h-5 text-cyan-400" />
-                  <h3 className="text-white font-semibold">{title}</h3>
-                  <span className="text-xs text-gray-400 ml-auto">
-                    {period}
-                  </span>
+        <div className="space-y-16">
+          {experiences.map((exp, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
+              className={`relative flex flex-col md:flex-row items-start ${index % 2 === 0 ? "md:flex-row-reverse" : ""
+                }`}
+            >
+
+              {/* Timeline Icon */}
+              <div className="absolute left-4 md:left-1/2 transform -translate-x-1/2 mt-1.5 flex items-center justify-center">
+                <div className="w-6 h-6 rounded-full bg-[#030305] border-2 border-ai-border z-10"></div>
+                <div
+                  className={`absolute w-14 h-14 rounded-full ${exp.bgColor} flex items-center justify-center border border-white/10 backdrop-blur-md z-20 ${exp.shadow}`}
+                >
+                  {exp.icon}
                 </div>
+              </div>
 
-                {/* Points */}
-                <ul className="space-y-2">
-                  {points.map((p) => (
-                    <li
-                      key={p}
-                      className="text-sm text-gray-400 flex items-start gap-2"
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-2"></span>
-                      {p}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
+              {/* Content */}
+              <div
+                className={`ml-20 md:ml-0 md:w-1/2 ${index % 2 === 0 ? "md:pl-16" : "md:pr-16"
+                  }`}
+              >
+                <div
+                  className={`glass-panel p-8 border-t-2 ${exp.borderColor} relative overflow-hidden`}
+                >
+                  <div
+                    className={`absolute -right-10 -top-10 w-40 h-40 ${exp.bgColor} rounded-full blur-[40px] opacity-40`}
+                  ></div>
 
+                  <div className="relative z-10">
+                    <span className="font-mono text-sm text-gray-400 mb-3 inline-block px-3 py-1 bg-white/5 rounded-full border border-white/10">
+                      {exp.period}
+                    </span>
+                    <h3 className={`text-2xl font-bold ${exp.color} mb-2`}>
+                      {exp.role}
+                    </h3>
+                    <h4 className="text-xl text-white font-medium mb-5">
+                      {exp.company}
+                    </h4>
+                    <p className="text-gray-400 text-base leading-relaxed font-mono">
+                      {exp.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

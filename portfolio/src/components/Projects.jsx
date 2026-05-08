@@ -24,7 +24,7 @@ const projects = [
     "https://github.com/MaddySingh2003",
 
   live:
-    "https://your-deployed-link.vercel.app/",
+    "https://cogniview-ai.vercel.app/",
 },
   {
     title: "ShopNest AI [Ecom]",

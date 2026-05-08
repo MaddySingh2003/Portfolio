@@ -4,6 +4,29 @@ import { FaGithub } from "react-icons/fa";
 
 const projects = [
   {
+  title: "CogniView AI [Interview Platform]",
+  description:
+    "AI-powered interview preparation platform with live voice interviews, HR rounds, coding assessments, resume-based questioning, real-time AI evaluation, analytics dashboard, and adaptive feedback system.",
+ image:
+  "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1000&auto=format&fit=crop",
+
+  tags: [
+    "React",
+    "TypeScript",
+    "Express",
+    "MongoDB",
+    "AI",
+    "Speech API",
+    "Tailwind"
+  ],
+
+  github:
+    "https://github.com/MaddySingh2003",
+
+  live:
+    "https://your-deployed-link.vercel.app/",
+},
+  {
     title: "ShopNest AI [Ecom]",
     description:
       "Full-stack e-commerce platform with ML-based price prediction and recommendation system.",
@@ -17,8 +40,8 @@ const projects = [
     title: "Skillmatch [ATS Resume Analyzer]",
     description:
       "Smart job portal with resume scoring and intelligent job matching using NLP.",
-    image:
-      "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=1000&auto=format&fit=crop",
+   image:
+  "https://images.unsplash.com/photo-1484417894907-623942c8ee29?q=80&w=1000&auto=format&fit=crop",
     tags: ["Django", "FastAPI", "NLP"],
     github: "https://github.com/MaddySingh2003",
     live: "https://skillmatch-thtz.onrender.com/",
@@ -33,6 +56,16 @@ const projects = [
     github: "https://github.com/MaddySingh2003/Market-Basket-Analysis",
     live:
       "http://mba-docker-env.eba-ztdubmfd.ap-south-1.elasticbeanstalk.com/",
+  },
+   {
+    title: "Aura Dashboard [Admin UI]",
+    description:
+      "Modern SaaS admin dashboard built with Angular and Tailwind CSS featuring glassmorphism, gradients, and micro-interactions.",
+    image:
+  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop",
+    tags: ["Angular", "Tailwind", "UI/UX"],
+    github: "https://github.com/MaddySingh2003/Aura-Dashboard",
+    live: "https://aura-dashboard-opal.vercel.app/dashboard",
   },
   {
   title: "Unity Kitchen Game",

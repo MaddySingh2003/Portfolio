@@ -21,10 +21,8 @@ const skillCategories = [
 
       // ✅ ADDED
       { name: "Generative AI", level: 80 },
-      { name: "LLMs", level: 75 },
+      { name: "LLMs / LangChain / Ollama", level: 75 },
       { name: "Prompt Engineering", level: 85 },
-      { name: "AI Interview Systems", level: 80 },
-      { name: "Speech Recognition APIs", level: 75 },
       { name: "Whisper AI", level: 70 },
       { name: "NLP", level: 80 },
     ],
@@ -42,8 +40,7 @@ const skillCategories = [
 
       // ✅ ADDED
       { name: "Express.js", level: 85 },
-      { name: "JWT Authentication", level: 85 },
-
+     
     ],
   },
 
@@ -54,14 +51,9 @@ const skillCategories = [
       { name: "React", level: 85 },
       { name: "Angular", level: 75 },
       { name: "Tailwind CSS", level: 85 },
-      { name: "HTML / CSS", level: 90 },
       { name: "JavaScript", level: 85 },
-
-      // ✅ ADDED
-      { name: "TypeScript", level: 80 },
-      { name: "Vite", level: 85 },
-      { name: "Responsive UI/UX", level: 85 },
-
+      { name: "Figma",level: 80 },
+      
     ],
   },
 
@@ -73,9 +65,8 @@ const skillCategories = [
       { name: "MySQL", level: 80 },
       { name: "MongoDB", level: 80 },
       { name: "SQLite", level: 70 },
-
+      
       // ✅ ADDED
-      { name: "Mongoose", level: 80 },
       { name: "Firebase Firestore", level: 75 },
     ],
   },
@@ -90,6 +81,8 @@ const skillCategories = [
       { name: "Vercel / Netlify", level: 80 },
       { name: "Render / Supabase", level: 75 },
       { name: "Postman", level: 85 },
+      { name: "Docker", level: 70 },
+      {name:"Railway",level:75},
 
     ],
   },
@@ -101,10 +94,6 @@ const skillCategories = [
       { name: "Flutter", level: 80 },
       { name: "Firebase", level: 80 },
       { name: "Unity (C#)", level: 75 },
-      { name: "Unreal Engine", level: 60 },
-
-      // ✅ ADDED
-      { name: "Game Physics", level: 70 },
       { name: "Cross Platform Apps", level: 75 },
     ],
   },

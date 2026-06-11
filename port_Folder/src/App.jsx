@@ -9,6 +9,7 @@ import Projects from "./components/Projects";
 import Contacts from "./components/Contacts";
 import Footer from "./components/Footer";
 import ThreeBackground from "./components/ThreeBackground";
+import Achiev from "./components/Achiev";
 
 // Custom Cursor Component
 const CustomCursor = () => {
@@ -59,6 +60,7 @@ export default function App() {
           <Skills />
           <Experience />
           <Projects />
+          <Achiev />
           <Contacts />
         </main>
         <Footer />

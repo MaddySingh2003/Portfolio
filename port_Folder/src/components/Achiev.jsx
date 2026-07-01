@@ -3,8 +3,18 @@ import { Award, ExternalLink, ShieldCheck } from "lucide-react";
 
 import pythonCert from "../assets/certificates/python-cr.png";
 import awsCert from "../assets/certificates/aws-cr.png";
+import awsScal from "../assets/certificates/aws-R.png";
 
 const certifications = [
+  {
+    title: "AWS Full Course",
+    issuer: "Scalar",
+    date: "July 2026",
+    image: awsScal,
+    color: "ai-blue",
+    description:
+      "All basic to advance concepts of AWS with  real-world scenarios.",
+  },
   {
     title: "Python Certification",
     issuer: "GUVI x HCL",
@@ -23,6 +33,7 @@ const certifications = [
     description:
       "Connecting Systems and Machines to AWS for Industrial Manufacturing.",
   },
+  
 ];
 
 export default function Achiev() {

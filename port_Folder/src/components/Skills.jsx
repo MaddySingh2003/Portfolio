@@ -14,17 +14,20 @@ const skillCategories = [
     icon: <BrainCircuit className="text-ai-purple w-7 h-7" />,
     skills: [
       { name: "Machine Learning", level: 80 },
+      { name: "Generative AI", level: 90 },
+      { name: "Prompt Engineering", level: 90 },
+      { name: "Large Language Models (LLMs)", level: 85 },
+      { name: "LangChain", level: 80 },
+      { name: "Ollama", level: 90 },
+      { name: "Whisper AI", level: 85 },
+      { name: "Faster Whisper", level: 85 },
+      { name: "NLP", level: 80 },
+      { name: "ChromaDB", level: 80 },
+     
       { name: "Scikit-learn", level: 85 },
       { name: "Pandas / NumPy", level: 85 },
       { name: "Matplotlib", level: 75 },
       { name: "Streamlit", level: 75 },
-
-      // ✅ ADDED
-      { name: "Generative AI", level: 80 },
-      { name: "LLMs / LangChain / Ollama", level: 75 },
-      { name: "Prompt Engineering", level: 85 },
-      { name: "Whisper AI", level: 70 },
-      { name: "NLP", level: 80 },
     ],
   },
 
@@ -32,15 +35,15 @@ const skillCategories = [
     title: "Backend Development",
     icon: <Database className="text-ai-green w-7 h-7" />,
     skills: [
-      { name: "Python / FastAPI", level: 85 },
-      { name: "Node.js", level: 80 },
+      { name: "Python", level: 90 },
+      { name: "FastAPI", level: 90 },
+      { name: "Node.js", level: 85 },
+      { name: "Express.js", level: 85 },
       { name: "Spring Boot", level: 75 },
       { name: "Django", level: 75 },
-      { name: "REST APIs", level: 85 },
-
-      // ✅ ADDED
-      { name: "Express.js", level: 85 },
-     
+      { name: "REST APIs", level: 90 },
+      { name: "JWT Authentication", level: 85 },
+      
     ],
   },
 
@@ -48,12 +51,13 @@ const skillCategories = [
     title: "Frontend Development",
     icon: <LayoutTemplate className="text-ai-neon w-7 h-7" />,
     skills: [
-      { name: "React", level: 85 },
+      { name: "React", level: 90 },
       { name: "Angular", level: 75 },
-      { name: "Tailwind CSS", level: 85 },
-      { name: "JavaScript", level: 85 },
-      { name: "Figma",level: 80 },
-      
+      { name: "JavaScript", level: 90 },
+      { name: "Tailwind CSS", level: 90 },
+      { name: "HTML5 / CSS3", level: 90 },
+      { name: "Responsive UI", level: 85 },
+      { name: "Figma", level: 80 },
     ],
   },
 
@@ -62,12 +66,11 @@ const skillCategories = [
     icon: <Database className="text-ai-green w-7 h-7" />,
     skills: [
       { name: "PostgreSQL", level: 85 },
+      { name: "MongoDB", level: 85 },
       { name: "MySQL", level: 80 },
-      { name: "MongoDB", level: 80 },
-      { name: "SQLite", level: 70 },
-      
-      // ✅ ADDED
+      { name: "SQLite", level: 75 },
       { name: "Firebase Firestore", level: 75 },
+      { name: "ChromaDB", level: 80 },
     ],
   },
 
@@ -75,26 +78,29 @@ const skillCategories = [
     title: "Tools & Cloud",
     icon: <Cloud className="text-yellow-400 w-7 h-7" />,
     skills: [
-      { name: "Git", level: 90 },
-      { name: "Linux", level: 80 },
+      { name: "Git & GitHub", level: 90 },
+      { name: "Docker", level: 75 },
+      { name: "Linux", level: 85 },
       { name: "AWS", level: 70 },
-      { name: "Vercel / Netlify", level: 80 },
-      { name: "Render / Supabase", level: 75 },
-      { name: "Postman", level: 85 },
-      { name: "Docker", level: 70 },
-      {name:"Railway",level:75},
-
+      { name: "Postman", level: 90 },
+      { name: "Railway", level: 80 },
+      { name: "Vercel", level: 85 },
+      { name: "Netlify", level: 85 },
+      { name: "Render", level: 75 },
+      { name: "Supabase", level: 75 },
+      { name: "Hugging Face", level: 80 },
+      { name: "GitHub Actions", level: 70 },
     ],
   },
 
   {
-    title: "Mobile & Game Dev",
+    title: "Mobile & Game Development",
     icon: <Code2 className="text-ai-neon w-7 h-7" />,
     skills: [
       { name: "Flutter", level: 80 },
       { name: "Firebase", level: 80 },
       { name: "Unity (C#)", level: 75 },
-      { name: "Cross Platform Apps", level: 75 },
+      { name: "Cross-Platform Apps", level: 75 },
     ],
   },
 ];

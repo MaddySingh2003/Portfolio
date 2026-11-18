@@ -4,8 +4,17 @@ import { Award, ExternalLink, ShieldCheck } from "lucide-react";
 import pythonCert from "../assets/certificates/python-cr.png";
 import awsCert from "../assets/certificates/aws-cr.png";
 import awsScal from "../assets/certificates/aws-R.png";
+import pytorch from "../assets/certificates/pytorch.png";
 
 const certifications = [
+   {title: "PyTorch for Deep Learning",
+    issuer: "Scaler",
+    date: "November 2026",
+    image: pytorch,
+    color: "ai-purple",
+    description:
+      "Gained hands-on knowledge of deep learning fundamentals, PyTorch, neural network concepts, and model development through tutorials, modules, and practical challenges.",
+  },
   {
     title: "AWS Full Course",
     issuer: "Scalar",
@@ -33,7 +42,7 @@ const certifications = [
     description:
       "Connecting Systems and Machines to AWS for Industrial Manufacturing.",
   },
-  
+    
 ];
 
 export default function Achiev() {
